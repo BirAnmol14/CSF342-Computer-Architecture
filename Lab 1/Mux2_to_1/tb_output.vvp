@@ -1,0 +1,62 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01273fd8 .scope module, "testbench" "testbench" 2 2;
+ .timescale 0 0;
+v01273868_0 .var "a", 0 0;
+v012786a0_0 .var "b", 0 0;
+v012786f8_0 .net "f", 0 0, L_012787a8;  1 drivers
+v01278750_0 .var "s", 0 0;
+S_012740a8 .scope module, "mux1" "mux2_1" 2 5, 3 1 0, S_01273fd8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "f"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+    .port_info 3 /INPUT 1 "s"
+v01273708_0 .net "a", 0 0, v01273868_0;  1 drivers
+v01273760_0 .net "b", 0 0, v012786a0_0;  1 drivers
+v012737b8_0 .net "f", 0 0, L_012787a8;  alias, 1 drivers
+v01273810_0 .net "s", 0 0, v01278750_0;  1 drivers
+L_012787a8 .functor MUXZ 1, v01273868_0, v012786a0_0, v01278750_0, C4<>;
+    .scope S_01273fd8;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "output.vcd" {0 0 0};
+    %vpi_call 2 8 "$dumpvars" {0 0 0};
+    %vpi_call 2 9 "$monitor", " ", $time, " a=%b, b=%b, s=%b f=%b", v01273868_0, v012786a0_0, v01278750_0, v012786f8_0 {0 0 0};
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v01273868_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v012786a0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v01278750_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v01278750_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v01273868_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v012786a0_0, 0, 1;
+    %delay 15, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v01278750_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v01278750_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_2mux1.v";
+    "./2mux1.v";

@@ -1,0 +1,117 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0123eef0 .scope module, "testbench" "testbench" 2 2;
+ .timescale 0 0;
+v02880bb8_0 .var "a", 0 0;
+v02880798_0 .var "b", 0 0;
+v028809a8_0 .net "carry", 0 0, L_02883cc0;  1 drivers
+v02880cc0_0 .var "cin", 0 0;
+v02880d70_0 .net "sum", 0 0, L_02883e28;  1 drivers
+S_01234d60 .scope module, "a1" "fulladder1bit" 2 5, 3 2 0, S_0123eef0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "cout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+    .port_info 4 /INPUT 1 "cin"
+L_02883e28 .functor XOR 1, L_02883de0, v02880cc0_0, C4<0>, C4<0>;
+L_02883c30 .functor AND 1, v02880cc0_0, L_02883de0, C4<1>, C4<1>;
+L_02883cc0 .functor OR 1, L_02883c30, L_028837b0, C4<0>, C4<0>;
+v01233fd0_0 .net *"_s2", 0 0, L_02883c30;  1 drivers
+v01234028_0 .net "a", 0 0, v02880bb8_0;  1 drivers
+v01233718_0 .net "b", 0 0, v02880798_0;  1 drivers
+v01233770_0 .net "c", 0 0, L_028837b0;  1 drivers
+v02880740_0 .net "cin", 0 0, v02880cc0_0;  1 drivers
+v02880c68_0 .net "cout", 0 0, L_02883cc0;  alias, 1 drivers
+v02880950_0 .net "s", 0 0, L_02883de0;  1 drivers
+v02880d18_0 .net "sum", 0 0, L_02883e28;  alias, 1 drivers
+S_01234e30 .scope module, "half_adder" "adder1bit" 3 6, 4 1 0, S_01234d60;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "carry"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_02883de0 .functor XOR 1, v02880bb8_0, v02880798_0, C4<0>, C4<0>;
+L_028837b0 .functor AND 1, v02880bb8_0, v02880798_0, C4<1>, C4<1>;
+v01233ec8_0 .net "a", 0 0, v02880bb8_0;  alias, 1 drivers
+v01239c08_0 .net "b", 0 0, v02880798_0;  alias, 1 drivers
+v01233f20_0 .net "carry", 0 0, L_028837b0;  alias, 1 drivers
+v01233f78_0 .net "sum", 0 0, L_02883de0;  alias, 1 drivers
+    .scope S_0123eef0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "output.vcd" {0 0 0};
+    %vpi_call 2 8 "$dumpvars" {0 0 0};
+    %vpi_call 2 9 "$monitor", " ", $time, " a=%b, b=%b, cin=%b, sum=%b, carry=%b", v02880bb8_0, v02880798_0, v02880cc0_0, v02880d70_0, v028809a8_0 {0 0 0};
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 40, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 60, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 70, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880bb8_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880798_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02880cc0_0, 0, 1;
+    %delay 80, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "tb_fulladder1bit.v";
+    "./fa1bit.v";
+    "./adder1bit.v";

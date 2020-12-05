@@ -1,0 +1,248 @@
+$date
+	Sat Nov 07 13:03:44 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TESTBENCH $end
+$var wire 8 ! storedvalue [7:0] $end
+$var reg 4 " key [3:0] $end
+$var reg 4 # num [3:0] $end
+$scope module dp $end
+$var wire 4 $ key [3:0] $end
+$var wire 4 % num [3:0] $end
+$var wire 8 & storedvalue [7:0] $end
+$var wire 8 ' prod [7:0] $end
+$var wire 4 ( numrot1 [3:0] $end
+$var wire 4 ) numrot [3:0] $end
+$var wire 4 * numo [3:0] $end
+$var wire 16 + addr [15:0] $end
+$var reg 1 , EN $end
+$var reg 1 - Enable $end
+$var reg 1 . WE $end
+$var reg 1 / clk $end
+$scope module dec $end
+$var wire 4 0 sel [3:0] $end
+$var reg 16 1 out1 [15:0] $end
+$upscope $end
+$scope module m1 $end
+$var wire 1 . WE $end
+$var wire 16 2 regsel [15:0] $end
+$var wire 8 3 datatowrite [7:0] $end
+$var reg 8 4 readdata [7:0] $end
+$upscope $end
+$scope module mult $end
+$var wire 4 5 op2 [3:0] $end
+$var wire 4 6 op1 [3:0] $end
+$var reg 4 7 A [3:0] $end
+$var reg 1 8 C $end
+$var reg 4 9 M [3:0] $end
+$var reg 4 : Q [3:0] $end
+$var reg 8 ; product [7:0] $end
+$var integer 32 < count [31:0] $end
+$upscope $end
+$scope module r1 $end
+$var wire 1 - Enable $end
+$var wire 1 / clk $end
+$var wire 4 = numo [3:0] $end
+$var reg 4 > numrotated [3:0] $end
+$upscope $end
+$scope module r2 $end
+$var wire 1 - Enable $end
+$var wire 1 / clk $end
+$var wire 4 ? numo [3:0] $end
+$var reg 4 @ numrotated [3:0] $end
+$upscope $end
+$scope module reg1 $end
+$var wire 1 , EN $end
+$var wire 1 / clk $end
+$var wire 4 A numin [3:0] $end
+$var reg 4 B numout [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 B
+b1000 A
+bx @
+bx ?
+bx >
+b1000 =
+b0 <
+bx000 ;
+bx000 :
+bx 9
+08
+bx 7
+bx 6
+b1000 5
+bx000 4
+bx000 3
+b100000000 2
+b100000000 1
+b1000 0
+1/
+1.
+1-
+1,
+b100000000 +
+b1000 *
+bx )
+bx (
+bx000 '
+bx000 &
+b1000 %
+b1000 $
+b1000 #
+b1000 "
+bx000 !
+$end
+#5
+0/
+#10
+b10000 !
+b10000 &
+b10000 4
+b10000 '
+b10000 3
+b10000 ;
+b0 :
+b10 9
+b1 7
+b0 <
+b10 (
+b10 6
+b10 @
+b100 )
+b100 >
+b100 ?
+1/
+#12
+b1001 #
+b1001 %
+b1001 A
+#15
+0/
+#20
+b1000000000 +
+b1000000000 1
+b1000000000 2
+b1001 *
+b1001 0
+b1001 =
+b1001 B
+1/
+#24
+b10100 !
+b10100 &
+b10100 4
+b10100 '
+b10100 3
+b10100 ;
+b100 :
+b1 7
+b0 <
+b1010 "
+b1010 $
+b1010 5
+b1100 #
+b1100 %
+b1100 A
+#25
+0/
+#30
+b111100 !
+b111100 &
+b111100 4
+b1000000000000 +
+b1000000000000 1
+b1000000000000 2
+b111100 '
+b111100 3
+b111100 ;
+b1100 *
+b1100 0
+b1100 =
+b1100 B
+b1100 :
+b110 9
+b11 7
+b0 <
+b110 (
+b110 6
+b110 @
+b1100 )
+b1100 >
+b1100 ?
+1/
+#35
+0/
+#36
+b1010100 !
+b1010100 &
+b1010100 4
+b1010100 '
+b1010100 3
+b1010100 ;
+b100 :
+b101 7
+b0 <
+b1110 "
+b1110 $
+b1110 5
+b1011 #
+b1011 %
+b1011 A
+#40
+b100000000000 +
+b100000000000 1
+b100000000000 2
+b1011 *
+b1011 0
+b1011 =
+b1011 B
+b110 )
+b110 >
+b110 ?
+1/
+#45
+0/
+#50
+b11000100 !
+b11000100 &
+b11000100 4
+b11000100 '
+b11000100 3
+b11000100 ;
+08
+b100 :
+b1110 9
+b1100 7
+b0 <
+b1110 (
+b1110 6
+b1110 @
+b1101 )
+b1101 >
+b1101 ?
+1/
+#55
+0/
+#60
+1/
+#65
+0/
+#70
+1/
+#75
+0/
+#80
+1/
+#85
+0/
+#86

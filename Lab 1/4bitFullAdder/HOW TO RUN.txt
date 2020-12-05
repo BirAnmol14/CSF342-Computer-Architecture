@@ -1,0 +1,8 @@
+1. to compile, I ran
+iverilog -o output.vvp tb_4bit.v
+
+2. to see results,
+vvp output.vvp
+
+3. To see in Gtkwave, works only if testbench has $dumpfile("output.vcd"); $dumpvars;
+gtkwave output.vcd

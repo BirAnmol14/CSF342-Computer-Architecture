@@ -1,0 +1,170 @@
+$date
+	Sat Nov 07 16:54:54 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbech $end
+$var wire 2 ! res [1:0] $end
+$var reg 10 " addr [9:0] $end
+$var reg 1 # bt $end
+$var reg 1 $ clk $end
+$scope module mod $end
+$var wire 10 % addr [9:0] $end
+$var wire 1 # bt $end
+$var wire 1 $ clk $end
+$var wire 2 & state [1:0] $end
+$var wire 2 ' st [1:0] $end
+$var wire 2 ( out2 [1:0] $end
+$var wire 2 ) out1 [1:0] $end
+$var reg 1 * prev $end
+$scope module m1 $end
+$var wire 1 * s $end
+$var wire 2 + o [1:0] $end
+$var wire 2 , i2 [1:0] $end
+$var wire 2 - i1 [1:0] $end
+$upscope $end
+$scope module notTaken $end
+$var wire 1 . WR $end
+$var wire 10 / addr [9:0] $end
+$var wire 2 0 in [1:0] $end
+$var reg 2 1 out [1:0] $end
+$var integer 32 2 i [31:0] $end
+$upscope $end
+$scope module p $end
+$var wire 1 # bt $end
+$var wire 1 $ clk $end
+$var reg 2 3 curr [1:0] $end
+$var reg 2 4 st [1:0] $end
+$upscope $end
+$scope module taken $end
+$var wire 1 # WR $end
+$var wire 10 5 addr [9:0] $end
+$var wire 2 6 in [1:0] $end
+$var reg 2 7 out [1:0] $end
+$var integer 32 8 i [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10000000000 8
+bx 7
+b0 6
+bx 5
+b0 4
+b0 3
+b10000000000 2
+bx 1
+b0 0
+bx /
+x.
+bx -
+bx ,
+bx +
+0*
+bx )
+bx (
+bx '
+b0 &
+bx %
+0$
+x#
+bx "
+bx !
+$end
+#5
+1$
+#10
+b0 !
+b0 '
+b0 +
+b0 (
+b0 ,
+b0 1
+b0 )
+b0 -
+b0 7
+0$
+b11110000 "
+b11110000 %
+b11110000 /
+b11110000 5
+1.
+0#
+#15
+1$
+#20
+0$
+#25
+1$
+#30
+0$
+#35
+1$
+#40
+0$
+0.
+1#
+#43
+1*
+#45
+b1 !
+b1 '
+b1 +
+b1 )
+b1 -
+b1 7
+b1 &
+b1 0
+b1 4
+b1 6
+b1 3
+1$
+#50
+0$
+#55
+b11 !
+b11 '
+b11 +
+b11 )
+b11 -
+b11 7
+b11 &
+b11 0
+b11 4
+b11 6
+b11 3
+1$
+#60
+0$
+#65
+1$
+#70
+b11 (
+b11 ,
+b11 1
+0$
+1.
+0#
+#73
+0*
+#75
+b10 !
+b10 '
+b10 +
+b10 (
+b10 ,
+b10 1
+b10 &
+b10 0
+b10 4
+b10 6
+b10 3
+1$
+#80
+0$

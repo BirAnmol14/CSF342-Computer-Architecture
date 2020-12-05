@@ -1,0 +1,27 @@
+module controlLogic(opcode,state,PCWrite,PCWriteCond,IorD,MemRead,MemWrite,IRWrite,MemtoReg,PCSrc,AluOp,AluSrcA,AluSrcB,RegWrite,RegDst,nextState);
+	input [5:0] opcode;
+	input [3:0] state;
+	output PCWrite,PCWriteCond,IorD,MemRead,MemWrite,IRWrite,MemtoReg,AluSrcA,RegWrite,RegDst;
+	output [1:0] PCSrc,AluOp,AluSrcB;
+	output [3:0] nextState;
+	assign PCWrite=((~state[3])&(~state[2])&(~state[1])&(~state[0]))|((state[3])&(~state[2])&(~state[1])&(state[0]));
+	assign PCWriteCond=((state[3])&(~state[2])&(~state[1])&(~state[0]));
+	assign IorD=((~state[3])&(~state[2])&(state[1])&(state[0]))|((~state[3])&(state[2])&(~state[1])&(state[0]));
+	assign MemRead=((~state[3])&(~state[2])&(~state[1])&(~state[0]))|((~state[3])&(~state[2])&(state[1])&(state[0]));
+	assign MemWrite=((~state[3])&(state[2])&(~state[1])&(state[0]));
+	assign IRWrite=((~state[3])&(~state[2])&(~state[1])&(~state[0]));
+	assign MemtoReg=((~state[3])&(state[2])&(~state[1])&(~state[0]));
+	assign PCSrc[1]=((state[3])&(~state[2])&(~state[1])&(state[0]));
+	assign PCSrc[0]=((state[3])&(~state[2])&(~state[1])&(~state[0]));
+	assign AluOp[1]=((~state[3])&(state[2])&(state[1])&(~state[0]));
+	assign AluOp[0]=((state[3])&(~state[2])&(~state[1])&(~state[0]));
+	assign AluSrcB[1]=((~state[3])&(~state[2])&(~state[1])&(state[0]))|((~state[3])&(~state[2])&(state[1])&(~state[0]));
+	assign AluSrcB[0]=((~state[3])&(~state[2])&(~state[1])&(~state[0]))|((~state[3])&(~state[2])&(~state[1])&(state[0]));
+	assign AluSrcA=((~state[3])&(~state[2])&(state[1])&(~state[0]))|((~state[3])&(state[2])&(state[1])&(~state[0]))|((state[3])&(~state[2])&(~state[1])&(~state[0]));
+	assign RegWrite=((~state[3])&(state[2])&(~state[1])&(~state[0]))|((~state[3])&(state[2])&(state[1])&(state[0]));
+	assign RegDst=((~state[3])&(state[2])&(state[1])&(state[0]));
+	assign nextState[3]=((~opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(opcode[1])&(~opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]))|((~opcode[5])&(~opcode[4])&(~opcode[3])&(opcode[2])&(~opcode[1])&(~opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]));
+	assign nextState[2]=((~state[3])&(~state[2])&(state[1])&(state[0]))|((~state[3])&(state[2])&(state[1])&(~state[0]))|((~opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(~opcode[1])&(~opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]))|((opcode[5])&(~opcode[4])&(opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(state[1])&(~state[0]));
+	assign nextState[1]=((~state[3])&(state[2])&(state[1])&(~state[0]))|((~opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(~opcode[1])&(~opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]))|((opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(state[1])&(~state[0]))|((opcode[5])&(~opcode[4])&(opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]))|((opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]));
+	assign nextState[0]=((~state[3])&(~state[2])&(~state[1])&(~state[0]))|((~state[3])&(state[2])&(state[1])&(~state[0]))|((~opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(opcode[1])&(~opcode[0])&(~state[3])&(~state[2])&(~state[1])&(state[0]))|((opcode[5])&(~opcode[4])&(opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(state[1])&(~state[0]))|((opcode[5])&(~opcode[4])&(~opcode[3])&(~opcode[2])&(opcode[1])&(opcode[0])&(~state[3])&(~state[2])&(state[1])&(~state[0]));
+endmodule
